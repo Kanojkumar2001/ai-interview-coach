@@ -70,6 +70,8 @@ const fadeIn = {
 
 const CandidateDashboard = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
+  const [showResume, setShowResume] = useState(false);
 
   return (
     <DashboardLayout>
