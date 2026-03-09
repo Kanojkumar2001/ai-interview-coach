@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import DashboardLayout from "@/components/DashboardLayout";
+import ResumeUploadModal from "@/components/ResumeUploadModal";
 import { motion } from "framer-motion";
 import {
   TrendingUp,
@@ -10,6 +13,7 @@ import {
   Target,
   Zap,
   Play,
+  Upload,
 } from "lucide-react";
 import {
   BarChart,
@@ -66,6 +70,8 @@ const fadeIn = {
 
 const CandidateDashboard = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
+  const [showResume, setShowResume] = useState(false);
 
   return (
     <DashboardLayout>
@@ -138,15 +144,24 @@ const CandidateDashboard = () => {
         </div>
       </motion.div>
 
-      {/* Start Interview */}
+      {/* Start Interview + Resume Upload */}
       <motion.div {...fadeIn} transition={{ duration: 0.4, delay: 0.25 }} className="mb-8">
         <div className="stat-card flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <h3 className="font-display font-semibold text-foreground">Ready for your next interview?</h3>
-            <p className="text-sm text-muted-foreground mt-1">Choose your preferred interview mode</p>
+            <p className="text-sm text-muted-foreground mt-1">Upload your resume or start an interview</p>
           </div>
-          <div className="flex gap-3">
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition">
+          <div className="flex flex-wrap gap-3">
+            <button
+              onClick={() => setShowResume(true)}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition"
+            >
+              <Upload className="h-4 w-4" /> Upload Resume
+            </button>
+            <button
+              onClick={() => navigate("/dashboard/candidate/interviews")}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary text-primary-foreground font-medium text-sm hover:opacity-90 transition"
+            >
               <Play className="h-4 w-4" /> AI Video Interview
             </button>
             <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition">
@@ -155,6 +170,8 @@ const CandidateDashboard = () => {
           </div>
         </div>
       </motion.div>
+
+      <ResumeUploadModal isOpen={showResume} onClose={() => setShowResume(false)} />
 
       {/* Interviews Table */}
       <motion.div {...fadeIn} transition={{ duration: 0.4, delay: 0.3 }}>
