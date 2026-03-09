@@ -1,5 +1,8 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import DashboardLayout from "@/components/DashboardLayout";
+import ResumeUploadModal from "@/components/ResumeUploadModal";
 import { motion } from "framer-motion";
 import {
   TrendingUp,
@@ -10,6 +13,7 @@ import {
   Target,
   Zap,
   Play,
+  Upload,
 } from "lucide-react";
 import {
   BarChart,
