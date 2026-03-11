@@ -10,7 +10,10 @@ import Signup from "./pages/Signup";
 import CandidateDashboard from "./pages/CandidateDashboard";
 import RecruiterDashboard from "./pages/RecruiterDashboard";
 import AIVideoInterview from "./pages/AIVideoInterview";
+import AITextInterview from "./pages/AITextInterview";
 import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
 import { ReactNode } from "react";
 
