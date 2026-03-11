@@ -49,6 +49,10 @@ const AppRoutes = () => {
         element={<ProtectedRoute role="candidate"><AITextInterview /></ProtectedRoute>}
       />
       <Route
+        path="/dashboard/candidate/coding-interview"
+        element={<ProtectedRoute role="candidate"><CodingInterview /></ProtectedRoute>}
+      />
+      <Route
         path="/dashboard/candidate/reports"
         element={<ProtectedRoute role="candidate"><Reports /></ProtectedRoute>}
       />
