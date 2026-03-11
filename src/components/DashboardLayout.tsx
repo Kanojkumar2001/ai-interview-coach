@@ -20,10 +20,12 @@ import { useState } from "react";
 
 const candidateLinks = [
   { label: "Dashboard", icon: LayoutDashboard, path: "/dashboard/candidate" },
-  { label: "Interviews", icon: Video, path: "/dashboard/candidate/interviews" },
+  { label: "Video Interview", icon: Video, path: "/dashboard/candidate/interviews" },
+  { label: "Text Interview", icon: MessageSquare, path: "/dashboard/candidate/text-interview" },
   { label: "AI Practice", icon: Brain, path: "/dashboard/candidate/practice" },
   { label: "Reports", icon: FileText, path: "/dashboard/candidate/reports" },
   { label: "Analytics", icon: BarChart3, path: "/dashboard/candidate/analytics" },
+  { label: "Leaderboard", icon: Trophy, path: "/dashboard/candidate/leaderboard" },
   { label: "Settings", icon: Settings, path: "/dashboard/candidate/settings" },
 ];
 
