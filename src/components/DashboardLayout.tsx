@@ -13,6 +13,8 @@ import {
   Brain,
   ChevronLeft,
   ChevronRight,
+  MessageSquare,
+  Trophy,
 } from "lucide-react";
 import { useState } from "react";
 
