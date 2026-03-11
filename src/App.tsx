@@ -11,6 +11,7 @@ import CandidateDashboard from "./pages/CandidateDashboard";
 import RecruiterDashboard from "./pages/RecruiterDashboard";
 import AIVideoInterview from "./pages/AIVideoInterview";
 import AITextInterview from "./pages/AITextInterview";
+import CodingInterview from "./pages/CodingInterview";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import Leaderboard from "./pages/Leaderboard";
@@ -46,6 +47,10 @@ const AppRoutes = () => {
       <Route
         path="/dashboard/candidate/text-interview"
         element={<ProtectedRoute role="candidate"><AITextInterview /></ProtectedRoute>}
+      />
+      <Route
+        path="/dashboard/candidate/coding-interview"
+        element={<ProtectedRoute role="candidate"><CodingInterview /></ProtectedRoute>}
       />
       <Route
         path="/dashboard/candidate/reports"

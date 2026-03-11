@@ -15,6 +15,7 @@ import {
   ChevronRight,
   MessageSquare,
   Trophy,
+  Code2,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -22,6 +23,7 @@ const candidateLinks = [
   { label: "Dashboard", icon: LayoutDashboard, path: "/dashboard/candidate" },
   { label: "Video Interview", icon: Video, path: "/dashboard/candidate/interviews" },
   { label: "Text Interview", icon: MessageSquare, path: "/dashboard/candidate/text-interview" },
+  { label: "Coding Interview", icon: Code2, path: "/dashboard/candidate/coding-interview" },
   { label: "AI Practice", icon: Brain, path: "/dashboard/candidate/practice" },
   { label: "Reports", icon: FileText, path: "/dashboard/candidate/reports" },
   { label: "Analytics", icon: BarChart3, path: "/dashboard/candidate/analytics" },
