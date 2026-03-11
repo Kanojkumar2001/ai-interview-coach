@@ -10,7 +10,10 @@ import Signup from "./pages/Signup";
 import CandidateDashboard from "./pages/CandidateDashboard";
 import RecruiterDashboard from "./pages/RecruiterDashboard";
 import AIVideoInterview from "./pages/AIVideoInterview";
+import AITextInterview from "./pages/AITextInterview";
 import Reports from "./pages/Reports";
+import Settings from "./pages/Settings";
+import Leaderboard from "./pages/Leaderboard";
 import NotFound from "./pages/NotFound";
 import { ReactNode } from "react";
 
@@ -41,12 +44,24 @@ const AppRoutes = () => {
         element={<ProtectedRoute role="candidate"><AIVideoInterview /></ProtectedRoute>}
       />
       <Route
+        path="/dashboard/candidate/text-interview"
+        element={<ProtectedRoute role="candidate"><AITextInterview /></ProtectedRoute>}
+      />
+      <Route
         path="/dashboard/candidate/reports"
         element={<ProtectedRoute role="candidate"><Reports /></ProtectedRoute>}
       />
       <Route
         path="/dashboard/candidate/analytics"
         element={<ProtectedRoute role="candidate"><Reports /></ProtectedRoute>}
+      />
+      <Route
+        path="/dashboard/candidate/leaderboard"
+        element={<ProtectedRoute role="candidate"><Leaderboard /></ProtectedRoute>}
+      />
+      <Route
+        path="/dashboard/candidate/settings"
+        element={<ProtectedRoute role="candidate"><Settings /></ProtectedRoute>}
       />
       <Route
         path="/dashboard/recruiter"
@@ -59,6 +74,10 @@ const AppRoutes = () => {
       <Route
         path="/dashboard/recruiter/analytics"
         element={<ProtectedRoute role="recruiter"><Reports /></ProtectedRoute>}
+      />
+      <Route
+        path="/dashboard/recruiter/settings"
+        element={<ProtectedRoute role="recruiter"><Settings /></ProtectedRoute>}
       />
       <Route
         path="/dashboard/admin"
