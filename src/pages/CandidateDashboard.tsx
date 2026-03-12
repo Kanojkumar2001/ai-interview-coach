@@ -206,7 +206,7 @@ const CandidateDashboard = () => {
                     <span className="text-xs px-2 py-1 rounded-full bg-success/10 text-success">{iv.status}</span>
                   </td>
                   <td className="py-3 px-2">
-                    <button className="text-xs text-primary hover:underline">View Report</button>
+                    <button onClick={() => navigate("/dashboard/candidate/reports")} className="text-xs text-primary hover:underline">View Report</button>
                   </td>
                 </tr>
               ))}
