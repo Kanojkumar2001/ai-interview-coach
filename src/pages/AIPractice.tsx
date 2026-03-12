@@ -174,6 +174,14 @@ const AIPractice = () => {
     ? Math.round(sessionScores.reduce((a, b) => a + b, 0) / sessionScores.length)
     : 0;
 
+  if (practiceMode === "mock") {
+    return (
+      <DashboardLayout>
+        <MockInterviewSession onExit={() => setPracticeMode("menu")} />
+      </DashboardLayout>
+    );
+  }
+
   if (practiceMode === "session" && selectedCategory) {
     const questions = mockQuestions[selectedCategory];
     const category = practiceCategories.find((c) => c.id === selectedCategory);
