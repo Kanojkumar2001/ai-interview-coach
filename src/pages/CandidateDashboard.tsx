@@ -164,7 +164,10 @@ const CandidateDashboard = () => {
             >
               <Play className="h-4 w-4" /> AI Video Interview
             </button>
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition">
+            <button
+              onClick={() => navigate("/dashboard/candidate/text-interview")}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition"
+            >
               <MessageSquare className="h-4 w-4" /> Text Interview
             </button>
           </div>
@@ -203,7 +206,7 @@ const CandidateDashboard = () => {
                     <span className="text-xs px-2 py-1 rounded-full bg-success/10 text-success">{iv.status}</span>
                   </td>
                   <td className="py-3 px-2">
-                    <button className="text-xs text-primary hover:underline">View Report</button>
+                    <button onClick={() => navigate("/dashboard/candidate/reports")} className="text-xs text-primary hover:underline">View Report</button>
                   </td>
                 </tr>
               ))}

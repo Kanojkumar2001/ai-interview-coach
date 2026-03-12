@@ -12,6 +12,7 @@ import RecruiterDashboard from "./pages/RecruiterDashboard";
 import AIVideoInterview from "./pages/AIVideoInterview";
 import AITextInterview from "./pages/AITextInterview";
 import CodingInterview from "./pages/CodingInterview";
+import AIPractice from "./pages/AIPractice";
 import Reports from "./pages/Reports";
 import Settings from "./pages/Settings";
 import Leaderboard from "./pages/Leaderboard";
@@ -51,6 +52,10 @@ const AppRoutes = () => {
       <Route
         path="/dashboard/candidate/coding-interview"
         element={<ProtectedRoute role="candidate"><CodingInterview /></ProtectedRoute>}
+      />
+      <Route
+        path="/dashboard/candidate/practice"
+        element={<ProtectedRoute role="candidate"><AIPractice /></ProtectedRoute>}
       />
       <Route
         path="/dashboard/candidate/reports"
