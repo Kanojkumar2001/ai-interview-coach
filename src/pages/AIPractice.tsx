@@ -350,6 +350,18 @@ const AIPractice = () => {
             <p className="text-xs text-muted-foreground">Solve problems with AI hints</p>
           </div>
         </button>
+        <button
+          onClick={() => setPracticeMode("mock")}
+          className="stat-card flex items-center gap-4 hover:border-warning/30 transition-colors cursor-pointer text-left"
+        >
+          <div className="h-12 w-12 rounded-xl bg-warning/10 flex items-center justify-center">
+            <Timer className="h-6 w-6 text-warning" />
+          </div>
+          <div>
+            <p className="font-semibold text-foreground">Mock Interview</p>
+            <p className="text-xs text-muted-foreground">30-min timed simulation</p>
+          </div>
+        </button>
       </motion.div>
 
       {/* Practice Categories */}
