@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DashboardLayout from "@/components/DashboardLayout";
+import MockInterviewSession from "@/components/practice/MockInterviewSession";
 import { motion } from "framer-motion";
 import {
   Brain,
@@ -18,6 +19,7 @@ import {
   Zap,
   ArrowRight,
   RotateCcw,
+  Timer,
 } from "lucide-react";
 
 const practiceCategories = [
