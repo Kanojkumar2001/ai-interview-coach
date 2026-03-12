@@ -107,7 +107,7 @@ const AIPractice = () => {
   const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [practiceMode, setPracticeMode] = useState<"menu" | "session">("menu");
+  const [practiceMode, setPracticeMode] = useState<"menu" | "session" | "mock">("menu");
   const [currentQ, setCurrentQ] = useState(0);
   const [answer, setAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
