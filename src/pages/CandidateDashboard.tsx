@@ -164,7 +164,10 @@ const CandidateDashboard = () => {
             >
               <Play className="h-4 w-4" /> AI Video Interview
             </button>
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition">
+            <button
+              onClick={() => navigate("/dashboard/candidate/text-interview")}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition"
+            >
               <MessageSquare className="h-4 w-4" /> Text Interview
             </button>
           </div>
