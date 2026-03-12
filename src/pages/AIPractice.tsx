@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DashboardLayout from "@/components/DashboardLayout";
+import MockInterviewSession from "@/components/practice/MockInterviewSession";
 import { motion } from "framer-motion";
 import {
   Brain,
@@ -18,6 +19,7 @@ import {
   Zap,
   ArrowRight,
   RotateCcw,
+  Timer,
 } from "lucide-react";
 
 const practiceCategories = [
@@ -105,7 +107,7 @@ const AIPractice = () => {
   const navigate = useNavigate();
   const [activeCard, setActiveCard] = useState<number | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [practiceMode, setPracticeMode] = useState<"menu" | "session">("menu");
+  const [practiceMode, setPracticeMode] = useState<"menu" | "session" | "mock">("menu");
   const [currentQ, setCurrentQ] = useState(0);
   const [answer, setAnswer] = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -171,6 +173,14 @@ const AIPractice = () => {
   const avgScore = sessionScores.length > 0
     ? Math.round(sessionScores.reduce((a, b) => a + b, 0) / sessionScores.length)
     : 0;
+
+  if (practiceMode === "mock") {
+    return (
+      <DashboardLayout>
+        <MockInterviewSession onExit={() => setPracticeMode("menu")} />
+      </DashboardLayout>
+    );
+  }
 
   if (practiceMode === "session" && selectedCategory) {
     const questions = mockQuestions[selectedCategory];
@@ -303,7 +313,7 @@ const AIPractice = () => {
       </motion.div>
 
       {/* Quick Actions */}
-      <motion.div {...fadeIn} transition={{ duration: 0.4, delay: 0.05 }} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <motion.div {...fadeIn} transition={{ duration: 0.4, delay: 0.05 }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <button
           onClick={() => navigate("/dashboard/candidate/interviews")}
           className="stat-card flex items-center gap-4 hover:border-primary/30 transition-colors cursor-pointer text-left"
@@ -338,6 +348,18 @@ const AIPractice = () => {
           <div>
             <p className="font-semibold text-foreground">Coding Challenge</p>
             <p className="text-xs text-muted-foreground">Solve problems with AI hints</p>
+          </div>
+        </button>
+        <button
+          onClick={() => setPracticeMode("mock")}
+          className="stat-card flex items-center gap-4 hover:border-warning/30 transition-colors cursor-pointer text-left"
+        >
+          <div className="h-12 w-12 rounded-xl bg-warning/10 flex items-center justify-center">
+            <Timer className="h-6 w-6 text-warning" />
+          </div>
+          <div>
+            <p className="font-semibold text-foreground">Mock Interview</p>
+            <p className="text-xs text-muted-foreground">30-min timed simulation</p>
           </div>
         </button>
       </motion.div>
