@@ -313,7 +313,7 @@ const AIPractice = () => {
       </motion.div>
 
       {/* Quick Actions */}
-      <motion.div {...fadeIn} transition={{ duration: 0.4, delay: 0.05 }} className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+      <motion.div {...fadeIn} transition={{ duration: 0.4, delay: 0.05 }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
         <button
           onClick={() => navigate("/dashboard/candidate/interviews")}
           className="stat-card flex items-center gap-4 hover:border-primary/30 transition-colors cursor-pointer text-left"
